@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yük Kaydı ve Harita</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.3/dist/leaflet-routing-machine.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+        #cargo-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        #map {
+            height: 500px;
+            border-radius: 10px;
+        }
+        .logo {
+    top: 0;
+    float: left;
+    align-items: center;
+    z-index: 999;
+    padding: 1rem;
+
+}
+
+.logo img {
+    width: 140px;
+}
+ul{
+
+    top: 4%;
+    margin-bottom: 10%;
+    text-align: center; 
+    width: 100%; 
+    transform: translateY(100%);
+    z-index: 999;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+ul li a{
+    text-shadow: 1px 1px;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #262626;
+    font-size: 30px;
+    transition: .8s;
+}
+ul li:hover a{
+   color: #fff;
+}
+ul li a span{
+    position: absolute;
+    left: 0;
+    width: 100%;  height: calc(100% / 3);
+    background: #ff5722;
+    z-index: -1;
+    transform-origin: right;
+    transform: rotateY(90deg);
+    transition: transform .45s;
+}
+ul li:hover a span{
+    transform-origin: left;
+    transform: rotateY(0deg);
+}
+ul li a span:nth-of-type(1){
+    top: 0;
+    transition-delay: 0s;
+}
+ul li a span:nth-of-type(2){
+    top: calc(100% / 3);
+    transition-delay: .15s;
+}
+ul li a span:nth-of-type(3){
+    top: calc(100% / (3 / 2));
+    transition-delay: .3s;
+}
+    </style>
+</head>
+
+<body>
+    <header class="ust-menu">
+        
+        <div class="logo">
+            <a href="index.html"> <img src="images/logo.png" alt="Yüküm Var Logo" /></a>
+         
+        </div>
+            <ul>
+                
+                <li><a href="index.html">ANA SAYFA
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="yuk_ekle.html">YÜK EKLE
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="profil.html">PROFİLİM
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="#alt-bolum">HAKKIMIZDA
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="giris.html">GİRİŞ YAP
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+            </ul>
+        
+    </header>
+
+    <h2>Yük Kaydı Formu</h2>
+    <div id="cargo-form">
+        <label for="pickup">Alış Yeri:</label><br>
+        <input type="text" id="pickup" placeholder="İstanbul" required><br><br>
+
+        <label for="delivery">Varış Yeri:</label><br>
+        <input type="text" id="delivery" placeholder="İzmir" required><br><br>
+
+        <button onclick="addRoute()">Rota Ekle</button>
+    </div>
+
+    <h3>Rota Haritası</h3>
+    <div id="map"></div>
+
+    <script>
+        // Haritayı başlat
+        var map = L.map('map').setView([39.9334, 32.8597], 6); // Türkiye merkezli başlangıç konumu
+
+        // OpenStreetMap katmanı ekle
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Mevcut kayıtlı yükler (örnek veriler)
+        const savedRoutes = [
+            { pickup: [41.0082, 28.9784], delivery: [38.4192, 27.1287] }, // İstanbul -> İzmir
+            { pickup: [39.9208, 32.8541], delivery: [37.0662, 37.3833] }  // Ankara -> Gaziantep
+        ];
+
+        // Kayıtlı yükleri harita üzerinde göster
+        savedRoutes.forEach(route => {
+            L.Routing.control({
+                waypoints: [
+                    L.latLng(route.pickup),
+                    L.latLng(route.delivery)
+                ],
+                lineOptions: {
+                    styles: [{ color: '#3498db', weight: 5 }]
+                },
+                addWaypoints: false,
+                draggableWaypoints: false,
+                fitSelectedRoutes: true,
+                showAlternatives: false,
+                createMarker: function() { return null; }
+            }).addTo(map);
+        });
+
+        // Yeni rota ekle fonksiyonu
+        function addRoute() {
+            const pickupInput = document.getElementById('pickup').value;
+            const deliveryInput = document.getElementById('delivery').value;
+
+            // Kullanıcıdan alınan lokasyon bilgileri
+            getCoordinates(pickupInput, function(pickupCoords) {
+                getCoordinates(deliveryInput, function(deliveryCoords) {
+                    if (pickupCoords && deliveryCoords) {
+                        L.Routing.control({
+                            waypoints: [
+                                L.latLng(pickupCoords),
+                                L.latLng(deliveryCoords)
+                            ],
+                            lineOptions: {
+                                styles: [{ color: '#e74c3c', weight: 5 }]
+                            },
+                            addWaypoints: false,
+                            draggableWaypoints: false,
+                            fitSelectedRoutes: true,
+                            showAlternatives: false,
+                            createMarker: function() { return null; }
+                        }).addTo(map);
+                    }
+                });
+            });
+        }
+
+        // Alış ve varış yerlerini koordinatlara çevirme (Geocoding)
+        function getCoordinates(address, callback) {
+            fetch(`https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data && data.length > 0) {
+                        const lat = data[0].lat;
+                        const lon = data[0].lon;
+                        callback([lat, lon]);
+                    } else {
+                        alert("Lokasyon bulunamadı!");
+                        callback(null);
+                    }
+                })
+                .catch(err => {
+                    console.error('Geocoding hatası:', err);
+                    callback(null);
+                });
+        }
+    </script>
+</body>
+</html>

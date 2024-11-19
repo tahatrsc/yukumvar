@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/İCON.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Yüküm Var - Yük Ara ve Taşı</title>
+    
+</head>
+<body>
+    
+    <header class="ust-menu">
+        
+        <div class="logo">
+            <a href="index.html"> <img src="images/logo.png" alt="Yüküm Var Logo" /></a>
+         
+        </div>
+            <ul>
+                
+                <li><a href="index.html">ANA SAYFA
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="yuk_ekle.html">YÜK EKLE
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="profil.html">PROFİLİM
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="#alt-bolum">HAKKIMIZDA
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="giris.html">GİRİŞ YAP
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+            </ul>
+        
+    </header>
+    
+    
+    <div class="load-sections">
+        <!-- Acil Yükler Bölümü -->
+        <div class="urgent-loads">
+            <h2>Acil Yükler</h2>
+            <div class="loads-grid">
+                <div class="load-card">
+                    <img src="images/inşaat.png" alt="Yük Fotoğrafı">
+                    <div class="load-info">
+                        <h3>İstanbul → Ankara</h3>
+                        <p>Yük Türü: İnşaat Malzemesi</p>
+                        <p>Dorse Türü: Tenteli Dorse</p>
+                        <p>Ağırlık: 15 Ton</p>
+                        <a href="detay.html"><button >Detaylar</button></a>
+                    </div>
+                </div>
+                <div class="load-card">
+                    <img src="images/mobilya.png" alt="Yük Fotoğrafı">
+                    <div class="load-info">
+                        <h3>İzmir → Antalya</h3>
+                        <p>Yük Türü: Mobilya</p>
+                        <p>Dorse Türü: Açık Dorse</p>
+                        <p>Ağırlık: 10 Ton</p>
+                        <a href="detay.html"><button >Detaylar</button></a>
+                    </div>
+                </div>
+                <!-- Diğer Acil Yükler -->
+            </div>
+        </div>
+    
+        <!-- Önerilen Yükler Bölümü -->
+        <div class="recommended-loads">
+            <h2>Önerilen Yükler</h2>
+            <div class="loads-grid">
+                <div class="load-card">
+                    <img src="images/gida.png" alt="Yük Fotoğrafı">
+                    <div class="load-info">
+                        <h3>Bursa → Eskişehir</h3>
+                        <p>Yük Türü: Gıda Ürünleri</p>
+                        <p>Dorse Türü: Soğutuculu Dorse</p>
+                        <p>Ağırlık: 8 Ton</p>
+                        <a href="detay.html"><button >Detaylar</button></a>
+                    </div>
+                </div>
+                <div class="load-card">
+                    <img src="images/tekstil.png" alt="Yük Fotoğrafı">
+                    <div class="load-info">
+                        <h3>Adana → Mersin</h3>
+                        <p>Yük Türü: Tekstil</p>
+                        <p>Dorse Türü: Kapalı Kasa</p>
+                        <p>Ağırlık: 5 Ton</p>
+                        <a href="detay.html"><button >Detaylar</button></a>
+                    </div>
+                </div>
+                <!-- Diğer Önerilen Yükler -->
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        
+        <section class="yuk-arama">
+            <h2>Yük Ara</h2>
+            <form class="arama-formu">                
+                <select id="alış-yeri" name="alış-yeri" >
+                <option value="">Alış Yeri Seçin</option>
+                <option value="adana">Adana</option>
+                <option value="adiyaman">Adıyaman</option>
+                <option value="afyon">Afyonkarahisar</option>
+                <option value="agri">Ağrı</option>
+                <option value="amasya">Amasya</option>
+                <option value="ankara">Ankara</option>
+                <option value="antalya">Antalya</option>
+                <option value="artvin">Artvin</option>
+                <option value="aydin">Aydın</option>
+                <option value="balikesir">Balıkesir</option>
+                <option value="bilecik">Bilecik</option>
+                <option value="bingol">Bingöl</option>
+                <option value="bitlis">Bitlis</option>
+                <option value="bolu">Bolu</option>
+                <option value="burdur">Burdur</option>
+                <option value="bursa">Bursa</option>
+                <option value="canakkale">Çanakkale</option>
+                <option value="cankiri">Çankırı</option>
+                <option value="corum">Çorum</option>
+                <option value="denizli">Denizli</option>
+                <option value="diyarbakir">Diyarbakır</option>
+                <option value="duzce">Düzce</option>
+                <option value="edirne">Edirne</option>
+                <option value="elazig">Elazığ</option>
+                <option value="erzincan">Erzincan</option>
+                <option value="erzurum">Erzurum</option>
+                <option value="eskisehir">Eskişehir</option>
+                <option value="gaziantep">Gaziantep</option>
+                <option value="gumushane">Gümüşhane</option>
+                <option value="hakkari">Hakkari</option>
+                <option value="hatay">Hatay</option>
+                <option value="igdir">Iğdır</option>
+                <option value="ismir">İzmir</option>
+                <option value="kahramanmaras">Kahramanmaraş</option>
+                <option value="karabuk">Karabük</option>
+                <option value="karaman">Karaman</option>
+                <option value="kastamonu">Kastamonu</option>
+                <option value="kayseri">Kayseri</option>
+                <option value="kirklareli">Kırklareli</option>
+                <option value="kirsehir">Kırşehir</option>
+                <option value="kilis">Kilis</option>
+                <option value="konya">Konya</option>
+                <option value="kutahya">Kütahya</option>
+                <option value="malatya">Malatya</option>
+                <option value="manisa">Manisa</option>
+                <option value="mersin">Mersin</option>
+                <option value="istanbul">İstanbul</option>
+                <option value="ankara">Ankara</option>
+                <option value="sakarya">Sakarya</option>
+                <option value="samsun">Samsun</option>
+                <option value="siirt">Siirt</option>
+                <option value="sinop">Sinop</option>
+                <option value="sivas">Sivas</option>
+                <option value="tekirdag">Tekirdağ</option>
+                <option value="tokat">Tokat</option>
+                <option value="trabzon">Trabzon</option>
+                <option value="tunceli">Tunceli</option>
+                <option value="usak">Uşak</option>
+                <option value="van">Van</option>
+                <option value="yalova">Yalova</option>
+                <option value="zonguldak">Zonguldak</option>
+            </select>
+            <select id="varış-yeri" name="varış-yeri" required>
+                <option value="">Varış Yeri Seçin</option>
+                <option value="adana">Adana</option>
+                <option value="adiyaman">Adıyaman</option>
+                <option value="afyon">Afyonkarahisar</option>
+                <option value="agri">Ağrı</option>
+                <option value="amasya">Amasya</option>
+                <option value="ankara">Ankara</option>
+                <option value="antalya">Antalya</option>
+                <option value="artvin">Artvin</option>
+                <option value="aydin">Aydın</option>
+                <option value="balikesir">Balıkesir</option>
+                <option value="bilecik">Bilecik</option>
+                <option value="bingol">Bingöl</option>
+                <option value="bitlis">Bitlis</option>
+                <option value="bolu">Bolu</option>
+                <option value="burdur">Burdur</option>
+                <option value="bursa">Bursa</option>
+                <option value="canakkale">Çanakkale</option>
+                <option value="cankiri">Çankırı</option>
+                <option value="corum">Çorum</option>
+                <option value="denizli">Denizli</option>
+                <option value="diyarbakir">Diyarbakır</option>
+                <option value="duzce">Düzce</option>
+                <option value="edirne">Edirne</option>
+                <option value="elazig">Elazığ</option>
+                <option value="erzincan">Erzincan</option>
+                <option value="erzurum">Erzurum</option>
+                <option value="eskisehir">Eskişehir</option>
+                <option value="gaziantep">Gaziantep</option>
+                <option value="gumushane">Gümüşhane</option>
+                <option value="hakkari">Hakkari</option>
+                <option value="hatay">Hatay</option>
+                <option value="igdir">Iğdır</option>
+                <option value="ismir">İzmir</option>
+                <option value="kahramanmaras">Kahramanmaraş</option>
+                <option value="karabuk">Karabük</option>
+                <option value="karaman">Karaman</option>
+                <option value="kastamonu">Kastamonu</option>
+                <option value="kayseri">Kayseri</option>
+                <option value="kirklareli">Kırklareli</option>
+                <option value="kirsehir">Kırşehir</option>
+                <option value="kilis">Kilis</option>
+                <option value="konya">Konya</option>
+                <option value="kutahya">Kütahya</option>
+                <option value="malatya">Malatya</option>
+                <option value="manisa">Manisa</option>
+                <option value="mersin">Mersin</option>
+                <option value="istanbul">İstanbul</option>
+                <option value="ankara">Ankara</option>
+                <option value="sakarya">Sakarya</option>
+                <option value="samsun">Samsun</option>
+                <option value="siirt">Siirt</option>
+                <option value="sinop">Sinop</option>
+                <option value="sivas">Sivas</option>
+                <option value="tekirdag">Tekirdağ</option>
+                <option value="tokat">Tokat</option>
+                <option value="trabzon">Trabzon</option>
+                <option value="tunceli">Tunceli</option>
+                <option value="usak">Uşak</option>
+                <option value="van">Van</option>
+                <option value="yalova">Yalova</option>
+                <option value="zonguldak">Zonguldak</option>
+            </select>
+
+        
+                <select aria-label="Yük Türü">
+                    
+                    <option value="">Yük Türü Seçin</option>
+                    <option value="elektronik">Elektronik Eşyalar</option>
+                    <option value="gida">Gıda Ürünleri</option>
+                    <option value="kumas">Kumaş</option>
+                    <option value="">Tüm Yük Türleri</option>
+                <option value="elektronik">Elektronik Ürünler</option>
+                <option value="gida">Gıda Maddeleri</option>
+                <option value="mobilya">Mobilya</option>
+                <option value="kıyafet">Kıyafet</option>
+                <option value="inşaat">İnşaat Malzemeleri</option>
+                    <!-- Diğer yük türleri eklenebilir -->
+                </select>
+        
+                <select aria-label="Dorse Türü">
+                    <option value="">Dorse Türü Seçin</option>
+                    <option value="kapalı">Kapalı Dorse</option>
+                    <option value="açık">Açık Dorse</option>
+                    <option value="tanker">Tanker</option>
+                    <option value="frigofrik">Frigo Dorse</option>
+                <option value="lowbed">Lowbed Dorse</option>
+                    <!-- Diğer dorse türleri eklenebilir -->
+                </select>
+        
+                <button type="submit">Ara</button>
+            </form>
+        
+            <div class="yuk-listesi">
+                
+                <div class="yuk-kart"><div class="yukd">
+                    <img src="images/elektronik.jpg" width="300px" height="300px"> 
+                </div>
+                    <h3>Yük 1</h3>
+                    <p>Açıklama: Elektronik Eşyalar</p>
+                    <p>Ağırlık: 200 kg</p>
+                    <p>Alış Yeri: İstanbul</p>
+                    <p>Varış Yeri: Bursa</p>
+                    <p>Yük Türü: Elektronik</p>
+                    <p>Dorse Türü: Kapalı</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="yuk-kart">
+                    <img src="images/gida1.jpg" width="300px" height="300px"
+                     alt="Gıda Ürünleri" class="yuk-foto">
+                    <h3>Yük 2</h3>
+                    <p>Açıklama: Gıda Ürünleri</p>
+                    <p>Ağırlık: 500 kg</p>
+                    <p>Alış Yeri: İzmir</p>
+                    <p>Varış Yeri: Antalya</p>
+                    <p>Yük Türü: Gıda</p>
+                    <p>Dorse Türü: Açık</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                
+                <!-- Daha fazla yük kartı buraya eklenebilir -->
+            </div>  
+        <section id="mevcut-yukler" class="mevcut-yukler">
+            <h2>Mevcut Yükler</h2>
+            <div class="yuk-listesi">
+                <div class="yuk-kart">
+                    <img src="images/elektronik.jpg"
+                     width="250" height="250" 
+                    alt="Elektronik Yük" class="yuk-foto">
+                    <h3>Elektronik Ürünler</h3>
+                    <p><strong>Ağırlık:</strong> 500 kg</p>
+                    <p><strong>Alım Yeri:</strong> İstanbul</p>
+                    <p><strong>İade Yeri:</strong> Ankara</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="yuk-kart">
+                    <img src="images/mobilya1.jpg" 
+                    width="250" height="250" 
+                    alt="Mobilya" class="yuk-foto">
+                    <h3>Mobilya</h3>
+                    <p><strong>Ağırlık:</strong> 300 kg</p>
+                    <p><strong>Alım Yeri:</strong> İzmir</p>
+                    <p><strong>İade Yeri:</strong> Mersin</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="yuk-kart">
+                    <img src="images/gida1.jpg" 
+                    width="250" height="250"
+                    alt="Gıda Maddeleri" class="yuk-foto">
+                    <h3>Gıda Maddeleri</h3>
+                    <p><strong>Ağırlık:</strong> 250 kg</p>
+                    <p><strong>Alım Yeri:</strong> Bursa</p>
+                    <p><strong>İade Yeri:</strong> Adana</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+            
+                <div class="yuk-kart">
+                    <img src="images/konteyner.jpeg"
+                    width="230" height="250"
+                    alt="Kontyner Taşımacılığı" class="yuk-foto">
+                    <h3>Kontyner Taşımacılıgı</h3>
+                    <p><strong>Ağırlık:</strong> 250 kg</p>
+                    <p><strong>Alım Yeri:</strong> Bursa</p>
+                    <p><strong>İade Yeri:</strong> Adana</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="yuk-kart">
+                    <img src="images/inşaat.jpg" alt="İnşaat Malzemeleri" class="yuk-foto" width="260px" height="250px">
+                    <h3>inşaat Malzemeleri</h3>
+                    <p><strong>Ağırlık:</strong> 250 kg</p>
+                    <p><strong>Alım Yeri:</strong> Bursa</p>
+                    <p><strong>İade Yeri:</strong> Adana</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="yuk-kart">
+                    <img src="images/tarim.jpg" alt="Tarım Makinaları Yükü" class="yuk-foto" width="250px" height="250px">
+                    <h3>Tarım Makinaları Taşımacılığı</h3>
+                    <p><strong>Ağırlık:</strong> 250 kg</p>
+                    <p><strong>Alım Yeri:</strong> Bursa</p>
+                    <p><strong>İade Yeri:</strong> Adana</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="yuk-kart">
+                    <img src="images/rüzgar.jpg" alt="Rüzgar Türbini" class="yuk-foto" width="250px" height="250px">
+                    <h3>Rüzgar Türbini Taşımacılıgı</h3>
+                    <p><strong>Ağırlık:</strong> 250 kg</p>
+                    <p><strong>Alım Yeri:</strong> Bursa</p>
+                    <p><strong>İade Yeri:</strong> Adana</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="yuk-kart">
+                    <img src="images/harfiyat7.jpeg" alt="Harfiyat" class="yuk-foto" width="250px" height="250px">
+                    <h3>Harfiyat Taşımacılığı</h3>
+                    <p><strong>Ağırlık:</strong> 250 kg</p>
+                    <p><strong>Alım Yeri:</strong> Bursa</p>
+                    <p><strong>İade Yeri:</strong> Adana</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="yuk-kart">
+                    <img src="images/kimyasal.jpg" alt="Kimyasal Madde Taşımacılığı" class="yuk-foto" width="250px" height="250px">
+                    <h3>Kimyasal Madde Taşımacılığı</h3>
+                    <p><strong>Ağırlık:</strong> 250 kg</p>
+                    <p><strong>Alım Yeri:</strong> Bursa</p>
+                    <p><strong>İade Yeri:</strong> Adana</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="yuk-kart">
+                    <img src="images/harfiyat7.jpeg" alt="Harfiyat" class="yuk-foto" width="250px" height="250px">
+                    <h3>Harfiyat Taşımacılığı</h3>
+                    <p><strong>Ağırlık:</strong> 250 kg</p>
+                    <p><strong>Alım Yeri:</strong> Bursa</p>
+                    <p><strong>İade Yeri:</strong> Adana</p>
+                    <a href="detay.html"><button >Detaylar</button></a>
+                </div>
+                <div class="bg"></div>
+                <div class="layer"></div>
+                <div class="star-field">
+                <div class="layer"></div>
+                <div class="layer"></div>
+               
+        </section>      
+    </main>
+    <section id="ay-in-soforu" class="ayin-soforu">
+        <h2 id="ay-in-soforu-baslik">Ayın Şoförleri</h2>
+        <div class="sofor-kartlari">
+            <!-- İkinci Şoför (Orta Boyut) -->
+            <div class="sofor-kart ikinci-sofor" onmouseover="büyüt(this)" onmouseout="kucult(this)">
+                <img src="images/mami.jpg" alt="İkinci Şoför" class="sofor-foto">
+                <div class="sofor-detaylar">
+                    <h3>Muhammed Emin Şanlı</h3>
+                    <p><strong>Puan:</strong> 9.5</p>
+                    <p><strong>Teslimat:</strong> 120</p>
+                </div>
+            </div>
+            <!-- Birinci Şoför (En Büyük Boyut) -->
+            <div class="sofor-kart birinci-sofor" onmouseover="büyüt(this)" onmouseout="kucult(this)">
+            <div class="odul-rozet">🏆 Ayın Şoförü</div>
+                <img src="images/profil.jpg" alt="Birinci Şoför" class="sofor-foto">
+                <div class="sofor-detaylar">
+                    <h3>Hanifi Taha Tıraşçı</h3>
+                    <p data-label="puan"><strong>Puan:</strong> 9.8</p>
+                    <p data-label="teslimat"><strong>Teslimat:</strong> 150</p>
+                </div>
+            </div>
+
+            <!-- Üçüncü Şoför (Küçük Boyut) -->
+            <div class="sofor-kart ucuncu-sofor" onmouseover="büyüt(this)" onmouseout="kucult(this)">
+                <img src="images/memo.jpg" alt="Üçüncü Şoför" class="sofor-foto">
+                <div class="sofor-detaylar">
+                    <h3>Mehmet Güzel</h3>
+                    <p><strong>Puan:</strong> 9.2</p>
+                    <p><strong>Teslimat:</strong> 100</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer id="alt-bolum">
+        <div class="sutun sutun1">
+          <h3>YÜKÜM VAR</h3>
+          <p>AIGEBGNAVLK <span style="color: #BA6573;">❤</span> by Jux</p>
+          <div class="sosyal">
+            <a href="https://www.linkedin.com/in/hanifi-taha-t%C4%B1ra%C5%9F%C3%A7%C4%B1/" target="_blank" class="baglanti"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt=""/></a>
+            <a href="https://www.linkedin.com/in/muhammed-emin-%C5%9Fanl%C4%B1/" target="_blank" class="baglanti"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt=""/></a>
+            <a href="https://www.linkedin.com/in/mehmet-g%C3%BCzel-a6666922b/" target="_blank" class="baglanti"><img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt=""/></a>
+          </div>
+          <p style="color: #818181; font-size: smaller">2024 © TÜM HAKLARI SAKLIDIR</p>
+        </div>
+        <div class="sutun sutun2">
+          <p>Hakkımızda</p>
+          <p>Misyonumuz</p>
+          <p>Gizlilik Politikası</p>
+          <p>Hizmet Şartları</p>
+        </div>
+        <div class="sutun sutun3">
+          <p>Hizmetler</p>
+          <p>Ürünler</p>
+          <p>Ekibimize Katılın</p>
+          <p>Bizimle Ortak Olun</p>
+        </div>
+        <div class="bulanık-arka-plan"></div>
+      </footer>
+      <div class="bg"></div>
+      <div class="layer"></div>
+      <div class="star-field">
+      <div class="layer"></div>
+      <div class="layer"></div>
+      
+</body>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</html>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yük Ekle</title>
+    <link rel="stylesheet" href="css/yukekle.css">
+</head>
+<body>
+    <header class="ust-menu">
+        
+        <div class="logo">
+            <a href="index.html"> <img src="images/logo.png" alt="Yüküm Var Logo" /></a>
+         
+        </div>
+            <ul>
+                
+                <li><a href="index.html">ANA SAYFA
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="profil.html">PROFİLİM
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="#alt-bolum">HAKKIMIZDA
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+                <li><a href="giris.html">GİRİŞ YAP
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a></li>
+            </ul>
+        
+    </header>
+    <div class="blurred-background">
+        <div class="form-container">
+            <h2>Yük Ekleme Formu</h2>
+            <form id="yükForm" enctype="multipart/form-data">
+                <label for="yük-türü">Yük Türü:</label>
+                <select id="yük-türü" name="yük-türü" required>
+                    <option value="">Yük Türü Seçin</option>
+                    <option value="elektronik">Elektronik Eşyalar</option>
+                    <option value="gida">Gıda Ürünleri</option>
+                    <option value="kumas">Kumaş</option>
+                    <option value="elektronik">Elektronik Ürünler</option>
+                    <option value="mobilya">Mobilya</option>
+                    <option value="gida">Gıda Maddeleri</option>
+                    <option value="inşaat">İnşaat Malzemeleri</option>
+                    <option value="kıyafet">Kıyafet</option>
+                    <!-- Diğer yük türleri eklenebilir -->
+                </select>
+                <select aria-label="Dorse Türü">
+                    <option value="">Dorse Türü Seçin</option>
+                    <option value="kapalı">Kapalı Dorse</option>
+                    <option value="açık">Açık Dorse</option>
+                    <option value="tanker">Tanker</option>
+                    <option value="frigofrik">Frigo Dorse</option>
+                    <option value="lowbed">Lowbed Dorse</option>
+                    <!-- Diğer dorse türleri eklenebilir -->
+                </select>
+                <select id="alış-yeri" name="alış-yeri" >
+                    <option value="">Alış Yeri Seçin</option>
+                    <option value="adana">Adana</option>
+                    <option value="adiyaman">Adıyaman</option>
+                    <option value="afyon">Afyonkarahisar</option>
+                    <option value="agri">Ağrı</option>
+                    <option value="amasya">Amasya</option>
+                    <option value="ankara">Ankara</option>
+                    <option value="antalya">Antalya</option>
+                    <option value="artvin">Artvin</option>
+                    <option value="aydin">Aydın</option>
+                    <option value="balikesir">Balıkesir</option>
+                    <option value="bilecik">Bilecik</option>
+                    <option value="bingol">Bingöl</option>
+                    <option value="bitlis">Bitlis</option>
+                    <option value="bolu">Bolu</option>
+                    <option value="burdur">Burdur</option>
+                    <option value="bursa">Bursa</option>
+                    <option value="canakkale">Çanakkale</option>
+                    <option value="cankiri">Çankırı</option>
+                    <option value="corum">Çorum</option>
+                    <option value="denizli">Denizli</option>
+                    <option value="diyarbakir">Diyarbakır</option>
+                    <option value="duzce">Düzce</option>
+                    <option value="edirne">Edirne</option>
+                    <option value="elazig">Elazığ</option>
+                    <option value="erzincan">Erzincan</option>
+                    <option value="erzurum">Erzurum</option>
+                    <option value="eskisehir">Eskişehir</option>
+                    <option value="gaziantep">Gaziantep</option>
+                    <option value="gumushane">Gümüşhane</option>
+                    <option value="hakkari">Hakkari</option>
+                    <option value="hatay">Hatay</option>
+                    <option value="igdir">Iğdır</option>
+                    <option value="ismir">İzmir</option>
+                    <option value="kahramanmaras">Kahramanmaraş</option>
+                    <option value="karabuk">Karabük</option>
+                    <option value="karaman">Karaman</option>
+                    <option value="kastamonu">Kastamonu</option>
+                    <option value="kayseri">Kayseri</option>
+                    <option value="kirklareli">Kırklareli</option>
+                    <option value="kirsehir">Kırşehir</option>
+                    <option value="kilis">Kilis</option>
+                    <option value="konya">Konya</option>
+                    <option value="kutahya">Kütahya</option>
+                    <option value="malatya">Malatya</option>
+                    <option value="manisa">Manisa</option>
+                    <option value="mersin">Mersin</option>
+                    <option value="istanbul">İstanbul</option>
+                    <option value="ankara">Ankara</option>
+                    <option value="sakarya">Sakarya</option>
+                    <option value="samsun">Samsun</option>
+                    <option value="siirt">Siirt</option>
+                    <option value="sinop">Sinop</option>
+                    <option value="sivas">Sivas</option>
+                    <option value="tekirdag">Tekirdağ</option>
+                    <option value="tokat">Tokat</option>
+                    <option value="trabzon">Trabzon</option>
+                    <option value="tunceli">Tunceli</option>
+                    <option value="usak">Uşak</option>
+                    <option value="van">Van</option>
+                    <option value="yalova">Yalova</option>
+                    <option value="zonguldak">Zonguldak</option>
+                </select>
+                <select id="varış-yeri" name="varış-yeri" required>
+                    <option value="">Varış Yeri Seçin</option>
+                    <option value="adana">Adana</option>
+                    <option value="adiyaman">Adıyaman</option>
+                    <option value="afyon">Afyonkarahisar</option>
+                    <option value="agri">Ağrı</option>
+                    <option value="amasya">Amasya</option>
+                    <option value="ankara">Ankara</option>
+                    <option value="antalya">Antalya</option>
+                    <option value="artvin">Artvin</option>
+                    <option value="aydin">Aydın</option>
+                    <option value="balikesir">Balıkesir</option>
+                    <option value="bilecik">Bilecik</option>
+                    <option value="bingol">Bingöl</option>
+                    <option value="bitlis">Bitlis</option>
+                    <option value="bolu">Bolu</option>
+                    <option value="burdur">Burdur</option>
+                    <option value="bursa">Bursa</option>
+                    <option value="canakkale">Çanakkale</option>
+                    <option value="cankiri">Çankırı</option>
+                    <option value="corum">Çorum</option>
+                    <option value="denizli">Denizli</option>
+                    <option value="diyarbakir">Diyarbakır</option>
+                    <option value="duzce">Düzce</option>
+                    <option value="edirne">Edirne</option>
+                    <option value="elazig">Elazığ</option>
+                    <option value="erzincan">Erzincan</option>
+                    <option value="erzurum">Erzurum</option>
+                    <option value="eskisehir">Eskişehir</option>
+                    <option value="gaziantep">Gaziantep</option>
+                    <option value="gumushane">Gümüşhane</option>
+                    <option value="hakkari">Hakkari</option>
+                    <option value="hatay">Hatay</option>
+                    <option value="igdir">Iğdır</option>
+                    <option value="ismir">İzmir</option>
+                    <option value="kahramanmaras">Kahramanmaraş</option>
+                    <option value="karabuk">Karabük</option>
+                    <option value="karaman">Karaman</option>
+                    <option value="kastamonu">Kastamonu</option>
+                    <option value="kayseri">Kayseri</option>
+                    <option value="kirklareli">Kırklareli</option>
+                    <option value="kirsehir">Kırşehir</option>
+                    <option value="kilis">Kilis</option>
+                    <option value="konya">Konya</option>
+                    <option value="kutahya">Kütahya</option>
+                    <option value="malatya">Malatya</option>
+                    <option value="manisa">Manisa</option>
+                    <option value="mersin">Mersin</option>
+                    <option value="istanbul">İstanbul</option>
+                    <option value="ankara">Ankara</option>
+                    <option value="sakarya">Sakarya</option>
+                    <option value="samsun">Samsun</option>
+                    <option value="siirt">Siirt</option>
+                    <option value="sinop">Sinop</option>
+                    <option value="sivas">Sivas</option>
+                    <option value="tekirdag">Tekirdağ</option>
+                    <option value="tokat">Tokat</option>
+                    <option value="trabzon">Trabzon</option>
+                    <option value="tunceli">Tunceli</option>
+                    <option value="usak">Uşak</option>
+                    <option value="van">Van</option>
+                    <option value="yalova">Yalova</option>
+                    <option value="zonguldak">Zonguldak</option>
+                </select>
+    
+                <label for="fiyat">Fiyat (₺):</label>
+                <input type="number" id="fiyat" name="fiyat" placeholder="Fiyat girin" required>
+
+                <label for="kapak-foto">Kapak Fotoğrafı:</label>
+                <input type="file" id="kapak-foto" name="kapak-foto" accept="image/*" required>
+
+                <label for="ek-fotolar">Ek Fotoğraflar:</label>
+                <input type="file" id="ek-fotolar" name="ek-fotolar[]" accept="image/*" multiple>
+                <button type="submit">Yükü Ekle</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/yukekle.js"></script>
+</body>
+</html>

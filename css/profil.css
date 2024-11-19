@@ -1,0 +1,152 @@
+/* Temel stil düzenlemeleri */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f9;
+    color: #333;
+}
+.filter-container {
+    margin: 20px;
+}
+select {
+    padding: 10px;
+    margin-right: 10px;
+    
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    top: 0;
+    float: left;
+    align-items: center;
+    z-index: 999;
+    padding: 1rem;
+
+}
+
+.logo img {
+    width: 140px;
+}
+ul{
+
+    top: 4%;
+    margin-bottom: 5%;
+    margin-left: -13%;
+    text-align: center; 
+    width: 100%; 
+    transform: translateY(100%);
+    z-index: 999;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+ul li a{
+    text-shadow: 1px 1px;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #262626;
+    font-size: 30px;
+    transition: .8s;
+}
+ul li:hover a{
+   color: #fff;
+}
+ul li a span{
+    position: absolute;
+    left: 0;
+    width: 100%;  height: calc(100% / 3);
+    background: #ff5722;
+    z-index: -1;
+    transform-origin: right;
+    transform: rotateY(90deg);
+    transition: transform .45s;
+}
+ul li:hover a span{
+    transform-origin: left;
+    transform: rotateY(0deg);
+}
+ul li a span:nth-of-type(1){
+    top: 0;
+    transition-delay: 0s;
+}
+ul li a span:nth-of-type(2){
+    top: calc(100% / 3);
+    transition-delay: .15s;
+}
+ul li a span:nth-of-type(3){
+    top: calc(100% / (3 / 2));
+    transition-delay: .3s;
+}
+.main {
+    width: 100%;
+    height: 100%;
+    margin-top: 10%;
+}
+/* Profil Bilgileri */
+.profile-section {
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.profile-details {
+    display: flex;
+    margin-top: 20px;
+}
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.profile-info {
+    flex: 1;
+}
+.profile-photo-input {
+    margin: 10px 0;
+}
+/* Blog Gönderileri */
+.blog-posts {
+    padding: 20px;
+    background-color: white;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+.blog-post {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+.blog-post h3 {
+    margin-bottom: 10px;
+}
+.blog-post p {
+    margin-bottom: 10px;
+}
+.read-more {
+    background-color: #005cbf;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

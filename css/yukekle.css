@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    background: url('https://cekergezer.com/wp-content/uploads/2021/02/istanbul-fotograflari-kiz-kulesi-uzun-pozlama-cekergezer-hakan-aydin.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.logo {
+    top: 0;
+    position: fixed ;
+    float: left;
+    align-items: center;
+    right: 10;
+    left: 20px;
+    z-index: 999;
+    padding: 1rem;
+  
+}
+  
+.logo img {
+    width: 180px;
+}
+
+ul{
+    margin-left: 20%;
+    position: absolute;
+    top: 4%; 
+    transform: translateY(10%);
+    white-space: nowrap;
+    z-index: 999;
+}
+ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+ul li a{
+    text-shadow: 1px 1px;
+    position: relative;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 10px 20px;
+    color: #262626;
+    font-size: 30px;
+    transition: .8s;
+}
+ul li:hover a{
+   color: #fff;
+}
+ul li a span{
+    position: absolute;
+    left: 0;
+    width: 100%;  height: calc(100% / 3);
+    background: #ff5722;
+    z-index: -1;
+    transform-origin: right;
+    transform: rotateY(90deg);
+    transition: transform .45s;
+}
+ul li:hover a span{
+    transform-origin: left;
+    transform: rotateY(0deg);
+}
+ul li a span:nth-of-type(1){
+    top: 0;
+    transition-delay: 0s;
+}
+ul li a span:nth-of-type(2){
+    top: calc(100% / 3);
+    transition-delay: .15s;
+}
+ul li a span:nth-of-type(3){
+    top: calc(100% / (3 / 2));
+    transition-delay: .3s;
+}
+  
+.blurred-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    margin-top: 6%;
+    border-radius: 15px;
+    padding: 20px 30px;
+    width: 500px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #007bff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="file"]
+ {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+}
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}

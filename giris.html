@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="tr" dir="ltr">
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:600,400" rel="stylesheet">
+        <link rel="stylesheet" href="css/giris.css">
+      </head>
+      
+      <header class="ust-menu">
+        
+        <div class="logo">
+            <a href="index.html"> <img src="images/logo.png" alt="Yüküm Var Logo" /></a>
+         
+    </header>
+
+  <body>
+    <div class="kapsayici">
+      <div class="formlar">
+        <div class="form-icerik">
+          <div class="form-container">
+            <div class="formlar">
+              <!-- Kayıt Ol Formu -->
+              <div class="kayit-ol-formu" id="kayitFormu">
+                <div class="baslik">Kayıt Ol</div>
+                <form action="#">
+                  <div class="girdi-kutulari">
+                    <div class="girdi-kutusu">
+                      <i class="fas fa-user"></i>
+                      <input type="text" placeholder="Adınızı girin" required>
+                    </div>
+                    <div class="girdi-kutusu">
+                      <i class="fas fa-envelope"></i>
+                      <input type="text" placeholder="E-posta adresinizi girin" required>
+                    </div>
+                    <div class="girdi-kutusu">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" placeholder="Şifrenizi girin" required>
+                    </div>
+                    <div class="girdi-kutusu">
+                      <label for="foto">Profil Fotoğrafı:</label>
+                      <input type="file" id="foto" name="foto" accept="image/*">
+                    </div>
+                    <div class="radio-secimi">
+                      <label><input type="radio" name="userType" value="sofor" id="sofor" onclick="toggleFields()"> Şoför</label>
+                      <label><input type="radio" name="userType" value="yukSahibi" id="yukSahibi" onclick="toggleFields()"> Yük Sahibi</label>
+                    </div>
+                    <div class="sofor-bilgileri" id="soforFields" style="display:none;">
+                      <div class="girdi-kutusu">
+                        <i class="fas fa-car"></i>
+                        <input type="text" placeholder="Araç Plakası" required>
+                      </div>
+                      <div class="girdi-kutusu">
+                        <i class="fas fa-truck"></i>
+                        <select name="trailer" required>
+                          <option value="">Dorse Tipi Seçin</option>
+                          <option value="taşınabilir">Taşınabilir</option>
+                          <option value="soğutucu">Soğutucu</option>
+                          <option value="kuru">Kuru</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="yuk-sahibi-bilgileri" id="yukSahibiFields" style="display:none;">
+                      <div class="girdi-kutusu">
+                        <i class="fas fa-building"></i>
+                        <input type="text" placeholder="Şirket İsmi" required>
+                      </div>
+                    </div>
+                    <div class="buton girdi-kutusu">
+                      <input type="submit" value="Gönder">
+                    </div>
+                    <div class="yazi kayit-ol-yazi">Zaten bir hesabınız var mı? <span id="girisLinki">Giriş Yap</span></div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Giriş Yap Formu -->
+              <div class="giris-yap-formu" id="girisFormu" style="display: none;">
+                <div class="baslik">Giriş Yap</div>
+                <form action="#">
+                  <div class="girdi-kutulari">
+                    <div class="girdi-kutusu">
+                      <i class="fas fa-envelope"></i>
+                      <input type="text" placeholder="E-posta adresinizi girin" required>
+                    </div>
+                    <div class="girdi-kutusu">
+                      <i class="fas fa-lock"></i>
+                      <input type="password" placeholder="Şifrenizi girin" required>
+                    </div>
+                    <div class="buton girdi-kutusu">
+                      <input type="submit" value="Giriş Yap">
+                    </div>
+                    <div class="yazi kayit-ol-yazi">Hesabınız yok mu? <span id="kayitLinki">Kayıt Ol</span></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Kayıt ol ve giriş yap formları arasında geçiş yapmak için script
+      document.getElementById('girisLinki').addEventListener('click', function() {
+        document.getElementById('kayitFormu').classList.add('slide-out');
+        document.getElementById('girisFormu').classList.add('slide-in');
+        
+        setTimeout(function() {
+          document.getElementById('kayitFormu').style.display = 'none';
+          document.getElementById('girisFormu').style.display = 'block';
+          document.getElementById('kayitFormu').classList.remove('slide-out');
+        }, 500);
+      });
+
+      document.getElementById('kayitLinki').addEventListener('click', function() {
+        document.getElementById('girisFormu').classList.add('slide-out');
+        document.getElementById('kayitFormu').classList.add('slide-in');
+        
+        setTimeout(function() {
+          document.getElementById('girisFormu').style.display = 'none';
+          document.getElementById('kayitFormu').style.display = 'block';
+          document.getElementById('girisFormu').classList.remove('slide-out');
+        }, 500);
+      });
+
+      // Şoför veya Yük Sahibi seçimindeki değişiklikleri dinleyen fonksiyon
+      function toggleFields() {
+        var soforFields = document.getElementById("soforFields");
+        var yukSahibiFields = document.getElementById("yukSahibiFields");
+        
+        if (document.getElementById("sofor").checked) {
+          soforFields.style.display = "block";
+          yukSahibiFields.style.display = "none";
+        } else if (document.getElementById("yukSahibi").checked) {
+          yukSahibiFields.style.display = "block";
+          soforFields.style.display = "none";
+        }
+      }
+    </script>
+  </body>
+</html>
